@@ -1,18 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import ButtonCostum from './But';
+import TextCostum from './BukaLapak';
+import ImageT from './image';
 
 export default function App() {
   return (
-    <View style={{flex:1,}}>
-      <View style={{flex:1,flexDirection:'row'}}>
-      <View style={{flex:1,backgroundColor:'red'}}></View>
-      </View>
-      
-    <View style={{flex:1,backgroundColor:'blue',}}></View>
-    </View>
-  
-    
+      <>
+      <TextCostum />
+      <ImageT />
+      <ButtonCostum />
+      </>
   );
 }
