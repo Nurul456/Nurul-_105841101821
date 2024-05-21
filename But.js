@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Button }  from 'react-native';
 
-const ButtonCostum = () => {
+const ButtonCostum =   () => {
     return (
       <View style={{
         flex:1,
