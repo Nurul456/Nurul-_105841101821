@@ -39,4 +39,4 @@ const ButtonCostum = () => {
       </View>
     )
    }
-  export default ButtonCostum;
+  export default ButtonCostum;
