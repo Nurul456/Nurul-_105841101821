@@ -1,42 +1,32 @@
-import { StyleSheet, Text, View, Image, Button }  from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { useFonts } from "expo-font";
 
-const ButtonCostum = () => {
+const App = () => {
+    const [fontsLoaded, fontError] = useFonts({
+        'Metro-Bold': require('./assets/Font/Metropolis-Black.otf'),
+        'Metropolis-Bold': require('./assets/Font/Metropolis-Bold.otf'),
+        'Metropolis-Medium': require('./assets/Font/Metropolis-Medium.otf'),
+        'Metropolis-SemiBold': require('./assets/Font/Metropolis-SemiBold.otf'),
+    });
+
+    if (!fontsLoaded) {
+        return (
+            <View>
+                <Text>Font tidak ditemukan!</Text>
+            </View>
+        );
+    }
+
     return (
-      <View style={{
-        flex:1,
-        backgroundColor:'white',
-        justifyContent:'center',//kolom
-        alignItems:'flex-end',//baris
-        flexDirection:'row',
-        marginBottom:100,
-        }}>
-          <ButtonComponent backgroundColor='red'
-          text='Login'/>
-          <ButtonComponent backgroundColor='green'
-          text='Register'/>
-          </View>
-    )
-  }
-  
-   const ButtonComponent =({backgroundColor,text}) => {
-    return(
-      <View style={{
-        backgroundColor:backgroundColor,
-        width:150,
-        height:70,
-        borderRadius:10,
-        marginLeft:10,
-      }}>
-        <Text style={{
-          color:'white',
-          textAlign:'center',
-          lineHeight:70,
-          fontSize:25,
-          fontWeight:'bold',
-        }}>
-          {text}
-          </Text> 
-      </View>
-    )
-   }
-  export default ButtonCostum;
+        <View>
+            <Text style={{ fontSize: 30, textAlign: 'center', marginTop: 250 }}>font Biasa</Text>
+            <Text style={{ fontFamily: 'Metro-Bold', fontSize: 30, textAlign: 'center' }}>Metro Black</Text>
+            <Text style={{ fontFamily: 'Metropolis-Bold', fontSize: 30, textAlign: 'center' }}>Metro Bold</Text>
+            <Text style={{ fontFamily: 'Metropolis-Medium', fontSize: 30, textAlign: 'center'}}>Metro Medium</Text>
+            <Text style={{ fontFamily: 'Metropolis-SemiBold', fontSize: 30, textAlign: 'center' }}>Metro SemiBold</Text>
+        </View>
+    );
+}
+
+export default App;

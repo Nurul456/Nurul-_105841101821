@@ -1,3 +1,4 @@
+// login.js
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Image } from 'react-native';
 import React from 'react';
 
