@@ -4,7 +4,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SignUpPage from './SignUpPage.js';
+import LoginPage from './Components/LoginPage';
 import { Button } from 'react-native';
 
 function HomeScreen({navigation}) {
@@ -13,7 +13,7 @@ function HomeScreen({navigation}) {
       <Text>Home Screen</Text>
       <Button
       title='Go to Login'
-      onPress={() => navigation.navigate('SignUpPage')}
+      onPress={() => navigation.navigate('LoginPage')}
       />
     </View>
   );
@@ -26,7 +26,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="SignUpPage" component={SignUpPage} />
+        <Stack.Screen name="LoginPage" component={LoginPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

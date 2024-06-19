@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Menggunakan ikon dari react-native-vector-icons
 
 export default function SignUpPage() {
   return (
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'black',
     marginBottom: 100,
-    fontFamily: './assets/font/Metropolis-Bold', // Mengatur font family
+    fontFamily: './assets/font/Metropolis-Bold', 
   },
   infoText: {
     fontSize: 14,
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    width: 300, // Lebar tetap dalam piksel
+    width: 300, 
   },
   accountContainer: {
     alignItems: 'center',
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     color: 'red',
     marginBottom: 20,
     textAlign: 'left',
-    fontFamily: './assets/font/Metropolis-SemiBold', // Mengatur font family
+    fontFamily: './assets/font/Metropolis-SemiBold', 
   },  
   signUpButton: {
     marginTop: 50,
@@ -74,6 +73,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: './assets/font/Metropolis-SemiBold', // Mengatur font family
+    fontFamily: './assets/font/Metropolis-SemiBold', 
   },
 });

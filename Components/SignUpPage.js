@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons'; 
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function SignUpPage() {
   return (
@@ -17,7 +17,6 @@ export default function SignUpPage() {
       <TextInput
         style={styles.input}
         placeholder="Password"
-        secureTextEntry={true}
       />
       <View style={styles.accountContainer}>
         <Text style={styles.accountText}>Already have an account?</Text>
@@ -29,10 +28,10 @@ export default function SignUpPage() {
       <Text style={styles.orText}>Or sign up with social account</Text>
       <View style={styles.socialContainer}>
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('./assets/image1.png')} style={styles.socialIcon} />
+        <Image source={require('../assets/image1.png')} style={styles.socialIcon} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('./assets/image2.png')} style={styles.socialIcon} />
+          <Image source={require('../assets/image2.png')} style={styles.socialIcon} />
         </TouchableOpacity>
       </View>
     </View>
