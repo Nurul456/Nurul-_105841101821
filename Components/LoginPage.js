@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
+
 export default function LoginPage() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Login</Text>
@@ -12,12 +16,13 @@ export default function LoginPage() {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        secureTextEntry={true}
       />
-      <View style={styles.accountContainer}>
+      <TouchableOpacity style={styles.accountContainer} onPress={() => navigation.navigate('ForgotPassword')}>
         <Text style={styles.accountText}>Don't have an account?</Text>
-        <Icon name="arrow-forward" size={15} color="red" />
-      </View>
-      <TouchableOpacity style={styles.signUpButton}>
+        <Icon name="arrow-forward" size={20} color="red" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('forgotPassword')}>
         <Text style={styles.signUpButtonText}>Login</Text>
       </TouchableOpacity>
       <Text style={styles.orText}>Or login with social account</Text>
@@ -44,44 +49,35 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: 50,
+    marginBottom: 20,
     textAlign: 'flex-start',
-    fontFamily: './assets/font/Metropolis-Bold', 
-  },
-  orText: {
-    fontSize: 14,
-    color: 'black',
-    marginBottom: 50,
-    textAlign: 'left',
-    color: 'black',
-     width: '90%', 
+    fontFamily: './assets/font/Metropolis-Bold',
   },
   input: {
     height: 60,
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 10,
-    paddingHorizontal: 5,
-    width: '90%', 
+    paddingHorizontal: 10,
+    width: '90%',
     alignSelf: 'center',
   },
   accountContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginTop: 10,
   },
   accountText: {
-    fontSize: 13,
+    fontSize: 17,
     color: 'black',
-    marginRight: 5,
-    fontFamily: '//assets/font/Metropolis-SemiBold',
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
   signUpButton: {
-    marginTop: 50,
+    marginTop: 10,
     backgroundColor: 'blue',
     paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingHorizontal: 120,
+    alignSelf: 'center',
     borderRadius: 8,
     alignItems: 'center',
   },
@@ -89,7 +85,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: './Assets/font/Metropolis-SemiBold', 
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
   socialContainer: {
     flexDirection: 'row',
@@ -99,21 +95,20 @@ const styles = StyleSheet.create({
   socialButton: {
     padding: 20,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: 'black',
     borderRadius: 5,
     alignItems: 'center',
-    marginHorizontal: 30,
+    marginHorizontal: 20,
   },
   socialIcon: {
     width: 40,
     height: 40,
   },
   orText: {
-    fontSize: 13,
+    fontSize: 16,
     color: 'black',
-    marginTop: 50,
+    marginTop: 40,
     textAlign: 'center',
-    fontFamily: './Assets/font/Metropolis-SemiBold',
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
 });
-

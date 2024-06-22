@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function SignUpPage() {
+export default function ForgotPasswordPage() {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Forgot Password</Text>
@@ -9,12 +12,12 @@ export default function SignUpPage() {
       <TextInput
         style={styles.input}
         placeholder="Email"
+        keyboardType="email-address"
+        autoCapitalize="none"
       />
-      <View style={styles.accountContainer}>
-        <Text style={styles.accountText}>Not a valid email address. Should be your@email.com</Text>
-      </View>
-      <TouchableOpacity style={styles.signUpButton}>
-        <Text style={styles.signUpButtonText}>SEND</Text>
+      <Text style={styles.errorText}>Not a valid email address. Should be your@email.com</Text>
+      <TouchableOpacity style={styles.sendButton} onPress={() => navigation.navigate('ResetPassword')}>
+        <Text style={styles.sendButtonText}>SEND</Text>
       </TouchableOpacity>
     </View>
   );
@@ -23,56 +26,47 @@ export default function SignUpPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    padding: 1,
-    marginTop: 30,
+    padding: 20,
   },
   titleText: {
-    fontSize: 35,
+    fontSize: 32,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: 100,
-    fontFamily: './assets/font/Metropolis-Bold', 
+    marginBottom: 20,
+    fontFamily: './assets/font/Metropolis-Bold',
   },
   infoText: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'black',
-    marginBottom: 5,
-    textAlign: 'left',
-    color: 'black',
+    marginBottom: 20,
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
   input: {
-    height: 60,
-    borderColor: 'gray',
-    borderWidth: 1,
+    height: 50,
+    borderWidth: 2,
     marginBottom: 10,
     paddingHorizontal: 10,
-    width: 300, 
+    borderRadius: 8,
+    backgroundColor: 'white',
+    width: 300,
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
-  accountContainer: {
-    alignItems: 'center',
-  },
-  
-  accountText: {
-    fontSize: 10,
+  errorText: {
+    fontSize: 14,
     color: 'red',
-    marginBottom: 20,
-    textAlign: 'left',
-    fontFamily: './assets/font/Metropolis-SemiBold', 
-  },  
-  signUpButton: {
-    marginTop: 50,
+    marginBottom: 40,
+  },
+  sendButton: {
     backgroundColor: 'blue',
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
   },
-  signUpButtonText: {
+  sendButtonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
-    fontFamily: './assets/font/Metropolis-SemiBold', 
+    fontFamily: './assets/font/Metropolis-SemiBold',
   },
 });
+ 
